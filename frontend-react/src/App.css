@@ -1,0 +1,366 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont;
+  background: linear-gradient(
+    180deg,
+    #cfdcf5 0%,
+    #477aba 50%,
+    #02132b 100%
+  );
+  color: #111;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 32px 20px 60px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.header h1 {
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: -0.8px;
+}
+
+.profile-btn {
+    background: #eef2ff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.profile-btn:hover {
+    background: #e0e7ff;
+}
+
+/* =========================
+   CARD BASE
+========================= */
+
+.card {
+    background: #ffffff;
+    padding: 26px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    margin-bottom: 28px;
+}
+
+.card h2 {
+    margin: 0 0 18px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.slider-group {
+    margin-bottom: 20px;
+}
+
+.slider-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: #e54646;
+}
+
+.row {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+select {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 15px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button.primary {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #4f46e5, #4338ca);
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button.primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(79, 70, 229, 0.35);
+}
+
+button.primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* =========================
+   RESULT CARD
+========================= */
+
+.result-card {
+    padding: 26px;
+    border-radius: 16px;
+    margin-top: 24px;
+    color: #111;
+}
+
+.result-card h2 {
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.result-card p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.result-card .advice {
+    margin-top: 12px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+/* Severity colors */
+
+.severity.low {
+    background: #ecfdf5;
+    border-left: 8px solid #10b981;
+}
+
+.severity.moderate {
+    background: #fffbeb;
+    border-left: 8px solid #f59e0b;
+}
+
+.severity.high {
+    background: #fff7ed;
+    border-left: 8px solid #f97316;
+}
+
+.severity.severe {
+    background: #fef2f2;
+    border-left: 8px solid #ef4444;
+}
+
+/* =========================
+   WEATHER CARD
+========================= */
+
+.weather-card {
+    margin-top: 26px;
+}
+
+.weather-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+    gap: 16px;
+}
+
+.weather-item {
+  flex: 1;
+  background: linear-gradient(
+    180deg,
+    #f8fafc,
+    #eef2f7
+  );
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: inset 0 0 0 1px #e5e7eb;
+}
+
+.weather-item .label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.weather-item .value {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+/* =========================
+   PROFILE DRAWER
+========================= */
+
+.profile-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 90;
+}
+
+.profile-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    padding: 26px;
+    box-shadow: -12px 0 30px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.profile-drawer h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.profile-drawer label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.profile-drawer button {
+    margin-top: 24px;
+    width: 100%;
+    padding: 12px;
+    background: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+.fade-in {
+    animation: fadeInUp 0.45s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.35s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 640px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .weather-grid {
+        flex-direction: column;
+    }
+
+    .profile-drawer {
+        width: 100%;
+    }
+}
+
+.input-card {
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #f9fafb
+  );
+  border-left: 6px solid #4f46e5;
+}
+
+.result-card {
+  margin-top: 32px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.result-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.result-card::after {
+  content: "";
+  display: block;
+  margin-top: 16px;
+  height: 2px;
+  width: 60px;
+  background: currentColor;
+  opacity: 0.2;
+}
+
+strong {
+  color: #374151;
+}
+
+.advice {
+  background: rgba(0,0,0,0.03);
+  padding: 12px;
+  border-radius: 10px;
+}
