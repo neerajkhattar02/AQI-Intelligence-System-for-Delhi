@@ -1,4 +1,4 @@
-# Delhi AQI Intelligence System 🌍
+# AQI Intelligence System for Delhi
 
 A full-stack air quality intelligence system that analyzes pollution data, live weather conditions, and personal context to provide **personalized air quality risk assessment and actionable advice**.
 
