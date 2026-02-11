@@ -15,13 +15,12 @@ app = FastAPI(title="AQI Decision Backend")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", 
-                   "https://aqi-intelligence-system-for-delhi.vercel.app/", 
-                   "https://aqi-intelligence-system-for-delhi-d5erswhor.vercel.app"],
-    allow_credentials=True,
-    allow_methods=["*"],   # allows OPTIONS, POST, GET, etc.
+    allow_origins=["*"],          # IMPORTANT
+    allow_credentials=False,      # IMPORTANT
+    allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 @app.get("/")
 def root():
@@ -64,15 +63,3 @@ def assess_aqi(data: AQIRequest):
             status_code=500,
             detail=f"Assessment failed: {str(e)}"
         )
-
-@app.options("/assess")
-async def assess_options():
-    return JSONResponse(
-        status_code=200,
-        content={"message": "OK"},
-        headers={
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "POST, OPTIONS",
-            "Access-Control-Allow-Headers": "*",
-        },
-    )
