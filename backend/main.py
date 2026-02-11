@@ -13,7 +13,9 @@ app = FastAPI(title="AQI Decision Backend")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "https://aqi-intelligence-system-for-delhi.vercel.app/", "https://aqi-intelligence-system-for-delhi-d5erswhor.vercel.app"],
+    allow_origins=["http://localhost:5173", 
+                   "https://aqi-intelligence-system-for-delhi.vercel.app/", 
+                   "https://aqi-intelligence-system-for-delhi-d5erswhor.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],   # allows OPTIONS, POST, GET, etc.
     allow_headers=["*"],
