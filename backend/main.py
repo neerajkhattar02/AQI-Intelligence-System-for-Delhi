@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from fastapi import Request
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from backend.weather import get_weather
 from backend.logic import weather_risk_adjustment
@@ -62,3 +64,15 @@ def assess_aqi(data: AQIRequest):
             status_code=500,
             detail=f"Assessment failed: {str(e)}"
         )
+
+@app.options("/assess")
+async def assess_options():
+    return JSONResponse(
+        status_code=200,
+        content={"message": "OK"},
+        headers={
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "POST, OPTIONS",
+            "Access-Control-Allow-Headers": "*",
+        },
+    )
