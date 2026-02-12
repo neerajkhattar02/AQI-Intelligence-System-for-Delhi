@@ -1,30 +1,31 @@
 # AQI Intelligence System for Delhi
 
-A full-stack air quality intelligence system that analyzes pollution data, live weather conditions, and personal context to provide **personalized air quality risk assessment and actionable advice**.
+A full-stack **Air Quality Intelligence Web App** that analyzes pollution levels in Delhi and provides **personalized lifestyle advice** using machine learning and real-time weather data.
 
-This project goes beyond basic AQI prediction by focusing on **decision support for real users**.
-
----
-
-## Features
-
-- Machine learning–based pollution severity estimation
-- Live weather integration (temperature, humidity, wind)
-- Personalized risk adjustment based on age, health, and activity
-- Human-friendly advice (not just numeric AQI)
-- Modern responsive UI built with React
-- FastAPI backend serving ML predictions and logic
+Built to help users make safer daily decisions like **whether to go outside, exercise, or stay indoors** based on air quality risk.
 
 ---
 
-## How It Works
+## Live Demo
 
-1. A trained ML model estimates pollution severity using pollutant levels and seasonality
-2. Real-time weather data adjusts the final risk
-3. User profile (age, respiratory health) and planned activity personalize the advice
-4. The system outputs **clear, actionable guidance** for daily decisions
+**Frontend (React App):**  
+https://aqi-intelligence-system-for-delhi.vercel.app/
 
-> This is an air-quality decision support system, not a medical or official AQI forecasting tool.
+**Backend API (FastAPI):**  
+https://delhi-aqi-backend.onrender.com/docs
+
+ *Note: Users only need the frontend link. Backend is for developers & API inspection.*
+
+---
+
+## Key Features
+
+- 📊 ML-based pollution severity estimation (RSPM focused)
+- 🌦️ Live weather integration (temperature, humidity, wind)
+- 🧠 Intelligent risk adjustment using weather + pollution
+- 👤 Profile-based personalization (age group & health conditions)
+- 🏃 Activity-aware lifestyle advice (walk, exercise, indoor)
+- ⚡ Fully deployed full-stack system (Frontend + Backend)
 
 ---
 
@@ -32,86 +33,40 @@ This project goes beyond basic AQI prediction by focusing on **decision support 
 
 **Frontend**
 - React (Vite)
-- CSS (custom UI, no heavy libraries)
+- CSS (custom UI & animations)
+- Deployed on Vercel
 
 **Backend**
 - FastAPI
-- Python
-- Scikit-learn
-- Joblib
-
-**Data & APIs**
-- Historical air pollution data
-- Live weather API
+- Scikit-learn (ML model)
+- Live Weather API
+- Deployed on Render
 
 ---
 
-## Project Structure
+## How It Works (High Level)
 
-delhi-aqi-intelligence-system/
-├── backend/
-│ ├── main.py
-│ ├── logic.py
-│ ├── models/
-│ └── requirements.txt
-├── frontend-react/
-│ ├── src/
-│ └── public/
-└── README.md
-
+1. User enters pollution levels & activity
+2. ML model estimates pollution severity
+3. Live weather data is fetched
+4. Risk level is adjusted using environmental conditions
+5. Personalized advice is generated for the user
 
 ---
 
-## Running Locally
+## Why This Project?
 
-### Backend
-```bash
-cd backend
-pip install -r requirements.txt
-uvicorn main:app --reload
-Frontend
-cd frontend-react
-npm install
-npm run dev
-Deployment
-Frontend deployed on Vercel
-
-Backend deployed on Render
-
-(Links will be added once deployment is complete.)
-
-Motivation
-Air quality affects daily decisions, yet AQI numbers alone are often confusing.
-This project aims to translate pollution data into meaningful, personalized guidance for everyday use.
-
-Disclaimer
-This project is for educational and analytical purposes only.
-It does not replace official air quality reports or medical advice.
-
+- Designed for **real-world usability**, not just prediction
+- Demonstrates **end-to-end ownership** (ML → Backend → Frontend → Deployment)
+- Built with **production practices** (API separation, env variables, deployments)
 
 ---
 
-# ABOUT SECTION (RIGHT SIDE OF GITHUB)
+## Author
 
-On GitHub repo sidebar:
+**Neeraj Khattar**  
+LinkedIn: https://www.linkedin.com/in/neeraj-khattar-993128311/
 
-### Website (after deployment):
-https://your-vercel-link.vercel.app
-
-
-### License:
-Choose **MIT License**
-
-Why:
-- Standard
-- Recruiter-friendly
-- No legal headache
+If you like this project, feel free to connect or check out the live demo!
 
 ---
-
-# COMMIT MESSAGE FOR FIRST PUSH
-
-When pushing initial version:
-
-```bash
-git commit -m "Initial full-stack AQI intelligence system"
